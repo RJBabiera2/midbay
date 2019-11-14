@@ -56,7 +56,7 @@
                echo "<p class='lead mb-2'>Subject: $subject</p>";
                echo "<p class='lead mb-5'>Message: $message</p>";
              ?>
-             <p><a href="index.shtml" class="btn btn-sm btn-primary">Back Home</a></p>
+             <p><a href="index.php" class="btn btn-sm btn-primary">Back Home</a></p>
            </div>
          </div>
        </div>

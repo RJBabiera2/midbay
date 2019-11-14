@@ -24,7 +24,9 @@
 
   <div class="site-wrap">
 
-    <!--#include file="header.html" -->
+    <?php
+        include('header.html');
+    ?>
 
     <div class="site-blocks-cover" style="background-image: url(images/indexPhoto.png);" data-aos="fade">
       <div class="container">
