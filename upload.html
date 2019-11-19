@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+  <head>
+    <meta charset = "UTF-8">
+    <title> Sign up </title>
+  </head>
+
+  <body>
+    <h2> Upload an item here: </h2>
+    <form method="post" action="processUpload.php">
+      Title of Item: <input type="text" name="title"><br>
+      Price: <input type="text" name="price"><br>
+      Description: <textarea name="description" rows="5" cols="50"></textarea><br>
+      Contact: <input type="email" name="contact"><br>
+      Select an Image: <input type="file" name="fileToUpload"> <br>
+      <input type="submit">
+      <input type="reset">
+    </form>
+  </body>
+</html>
