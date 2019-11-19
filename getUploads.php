@@ -7,11 +7,7 @@
   while ($line = fgets($fp)){
     $all = explode("\t", $line);
 
-    $toSend[$count][$id] = $all[0];
-    $toSend[$count][$price] = $all[1];
-    $toSend[$count][$name] = $all[2];
-    $toSend[$count][$email] = $all[3];
-    $toSend[$count][$description] = $all[4];
+    $toSend[$count] = $all[0]."\t".$all[1]."\t".$all[2]."\t".$all[3]."\t".$all[4];
     $count++;
   }
 
