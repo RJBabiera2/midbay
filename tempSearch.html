@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <script>
+      //should call a search
+      function search(a){
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function(){
+          if (this.readyState == 4 && this.status == 200){
+            var toParse = this.responseText;
+            toParse = JSON.parse(toParse);
+            var toWrite = new Array();
+
+            for(var i=0; i<toParse.length; i++){
+              toWrite[i] = toParse[i].split("\t");
+            }
+
+            //document.writeln(toParse.length);
+            //one table row epr loop
+            for(var i=0; i<toWrite.length; i++){
+              for(var j=1; j<5; j++){
+                var toChange = document.getElementById("in"+i+" "+j);
+                toChange.innerHTML = toWrite[i][j];
+              }
+
+            }
+          }
+
+          xhttp.open("GET", "search.php?q="+a, true);
+          xhttp.send();
+        }
+      }
+    </script>
+    <title> My Events </title>
+    <style>
+      table, td, th {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <table>
+      <script>
+      var xhttp = new XMLHttpRequest();
+
+      xhttp.onreadystatechange = function(){
+        if (this.readyState == 4 && this.status == 200){
+          var toParse = this.responseText;
+          toParse = JSON.parse(toParse);
+          var toWrite = new Array();
+
+          for(var i=0; i<toParse.length; i++){
+            toWrite[i] = toParse[i].split("\t");
+          }
+
+          //document.writeln(toWrite[0][2]);
+          //document.writeln(toParse.length);
+          //one table row epr loop
+          for(var i=0; i<toWrite.length; i++){
+            for(var j=1; j<5; j++){
+              var toChange = document.getElementById("in"+i+" "+j);
+              toChange.innerHTML = toWrite[i][j];
+            }
+
+          }
+        }
+      };
+
+      xhttp.open("GET", "getUploads.php", true);
+      xhttp.send();
+
+        for(var i=0; i<toParse.length; i++){
+          document.writeln("<tr>");
+
+          for(var j=1; j<5; j++){
+            document.writeln("<td id=\"in"+i+" "+j+"\">");
+            document.writeln("</td>");
+          }
+          document.writeln("</tr>");
+        }
+      </script>
+    </table>
+
+    <table>
+    <script>
+      var xhttp = new XMLHttpRequest();
+
+      xhttp.onreadystatechange = function(){
+        if (this.readyState == 4 && this.status == 200){
+          var toParse = this.responseText;
+          toParse = JSON.parse(toParse);
+          var toWrite = new Array();
+
+          for(var i=0; i<toParse.length; i++){
+            toWrite[i] = toParse[i].split("\t");
+          }
+
+          //document.writeln(toWrite[0][2]);
+          //document.writeln(toParse.length);
+          //one table row epr loop
+          for(var i=0; i<toWrite.length; i++){
+            for(var j=1; j<5; j++){
+              var toChange = document.getElementById("in"+i+" "+j);
+              toChange.innerHTML = toWrite[i][j];
+            }
+
+          }
+        }
+      };
+
+      xhttp.open("GET", "getUploads.php", true);
+      xhttp.send();
+    </script>
+  </table>
+  </body>
+
+</html>

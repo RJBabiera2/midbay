@@ -1,6 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      //should call a search
+      function search(a){
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function(){
+          if (this.readyState == 4 && this.status == 200){
+            var toParse = this.responseText;
+            toParse = JSON.parse(toParse);
+            var toWrite = new Array();
+
+            for(var i=0; i<toParse.length; i++){
+              toWrite[i] = toParse[i].split("\t");
+            }
+
+            //document.writeln(toParse.length);
+            //one table row epr loop
+            for(var i=0; i<toWrite.length; i++){
+              for(var j=1; j<5; j++){
+                var toChange = document.getElementById("in"+i+" "+j);
+                toChange.innerHTML = toWrite[i][j];
+              }
+
+            }
+          }
+
+          xhttp.open("GET", "search.php?q="+a, true);
+          xhttp.send();
+        }
+      }
+    </script>
     <title>Shop</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -28,7 +58,6 @@
         include('header.html');
     ?>
 
-    <script>
 
 
     <div class="bg-light py-3">
@@ -82,7 +111,7 @@
                   </figure>
                   <div class="block-4-text p-4">
                     <h3><a href="shop-single.html" id="0-name">Tank Top</a></h3>
-                    <p class="mb-0" id="0-description">Finding perfect t-shirt</p>
+                    <p class="mb-0" id="0-subname">Finding perfect t-shirt</p>
                     <p class="text-primary font-weight-bold" id="0-price">$50</p>
                   </div>
                 </div>
@@ -93,9 +122,9 @@
                     <a href="shop-single.html"><img src="images/shoe_1.jpg" alt="Image placeholder" class="img-fluid"></a>
                   </figure>
                   <div class="block-4-text p-4">
-                    <h3><a href="shop-single.html">Corater</a></h3>
-                    <p class="mb-0">Finding perfect products</p>
-                    <p class="text-primary font-weight-bold">$50</p>
+                    <h3><a href="shop-single.html" id="1-name">Corater</a></h3>
+                    <p class="mb-0" id="1-subname">Finding perfect products</p>
+                    <p class="text-primary font-weight-bold" id="1-price">$50</p>
                   </div>
                 </div>
               </div>
@@ -105,9 +134,9 @@
                     <a href="shop-single.html"><img src="images/cloth_2.jpg" alt="Image placeholder" class="img-fluid"></a>
                   </figure>
                   <div class="block-4-text p-4">
-                    <h3><a href="shop-single.html">Polo Shirt</a></h3>
-                    <p class="mb-0">Finding perfect products</p>
-                    <p class="text-primary font-weight-bold">$50</p>
+                    <h3><a href="shop-single.html" id="2-name">Polo Shirt</a></h3>
+                    <p class="mb-0" id="2-subname">Finding perfect products</p>
+                    <p class="text-primary font-weight-bold" id="2-price">$50</p>
                   </div>
                 </div>
               </div>
@@ -417,6 +446,33 @@
       </div>
     </footer>
   </div>
+
+  <script>
+    var xhttp = new XMLHttpRequest();
+    //document.getElementById("0-name").innerHTML = "toast";
+    xhttp.onreadystatechange = function(){
+      if (this.readyState == 4 && this.status == 200){
+        var toParse = this.responseText;
+        toParse = JSON.parse(toParse);
+        var toWrite = new Array();
+
+        for(var i=0; i<toParse.length; i++){
+          toWrite[i] = toParse[i].split("\t");
+        }
+
+        for(var i=0; i<toParse.length; i++){
+          document.getElementById(i+"-name").innerHTML = toWrite[i][2];
+          document.getElementById(i+"-subname").innerHTML = toWrite[i][4];
+          document.getElementById(i+"-price").innerHTML = toWrite[i][1];
+        }
+      }
+    };
+
+    xhttp.open("GET", "getUploads.php", true);
+    xhttp.send();
+
+
+  </script>
 
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery-ui.js"></script>
