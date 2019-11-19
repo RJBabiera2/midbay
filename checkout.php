@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<?php
+  session_start();
+
+  if(!isset($_SESSION["username"])){
+    header("Location: login.php");
+  }
+ ?>
 <html lang="en">
   <head>
     <title>Checkout</title>
@@ -25,7 +32,7 @@
   <div class="site-wrap">
 
     <?php
-        include('header.html');
+        include('header.php');
     ?>
 
     <div class="bg-light py-3">

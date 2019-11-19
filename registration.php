@@ -25,7 +25,7 @@
   <div class="site-wrap">
 
     <?php
-        include('header.html');
+        include('header.php');
     ?>
 
     <div class="container">
@@ -34,17 +34,19 @@
           <h2 class="h2 mb-1 text-black" style="text-align: center">Create a New Account</h2>
           <div class="p-3 p-lg-5 border">
 
+            <form method="post" action="signUp.php">
+
             <div class="form-group row">
               <div class="col-md-12">
                 <label class="h5 text-black">First Name</label>
-                <input type="text" class="form-control" id="username" name="username">
+                <input type="text" class="form-control" id="firstname" name="firstname">
               </div>
             </div>
 
             <div class="form-group row">
               <div class="col-md-12">
                 <label class="h5 text-black">Last Name</label>
-                <input type="text" class="form-control" id="username" name="username">
+                <input type="text" class="form-control" id="lastname" name="lastname">
               </div>
             </div>
 
@@ -52,6 +54,13 @@
               <div class="col-md-12">
                 <label class="h5 text-black">Username</label>
                 <input type="text" class="form-control" id="username" name="username">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-md-12">
+                <label class="h5 text-black">Venmo</label>
+                <input type="text" class="form-control" id="venmo" name="venmo">
               </div>
             </div>
 
@@ -80,7 +89,7 @@
               <button class="btn btn-primary btn-lg py-3 btn-block" onclick="window.location=''">Join midBay!</button>
             </div>
           </div>
-
+        </form>
           <div class="row mb-5">
             <div class="col-md-12">
               <div class="border p-4 rounded" role="alert" style="text-align: center">

@@ -25,26 +25,26 @@
   <div class="site-wrap">
 
     <?php
-        include('header.html');
+        include('header.php');
     ?>
 
     <div class="container">
       <div class="row">
         <div class="col-md-6 mb-5 mb-md-0" style="margin: 0 auto;">
           <h2 class="h2 mb-1 text-black" style="text-align: center">Log In</h2>
-
+          <form method="post" action="processLogin.php">
           <div class="p-3 p-lg-5 border">
             <div class="form-group row">
               <div class="col-md-12">
                 <label class="h5 text-black">Username</label>
-                <input type="text" class="form-control" id="username" name="username">
+                <input type="text" class="form-control" id="user" name="user">
               </div>
             </div>
 
             <div class="form-group row">
               <div class="col-md-12">
                 <label class="h5 text-black">Password</label>
-                <input type="password" class="form-control" id="password" name="password">
+                <input type="password" class="form-control" id="passwd" name="passwd">
               </div>
             </div>
 
@@ -52,11 +52,12 @@
               <button class="btn btn-primary btn-lg py-3 btn-block" onclick="window.location=''">Sign In</button>
             </div>
           </div>
+        </form>
 
           <div class="row mb-5">
             <div class="col-md-12">
               <div class="border p-4 rounded" role="alert" style="text-align: center">
-                Don't have an account? <br> <a href="registration.shtml">SIGN UP NOW</a>
+                Don't have an account? <br> <a href="registration.php">SIGN UP NOW</a>
               </div>
             </div>
           </div>

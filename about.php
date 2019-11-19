@@ -25,7 +25,7 @@
   <div class="site-wrap">
 
     <?php
-        include('header.html');
+        include('header.php');
     ?>
 
     <div class="bg-light py-3">
@@ -43,7 +43,6 @@
             <div class="block-16">
               <figure>
                 <img src="images/blog_1.jpg" alt="Image placeholder" class="img-fluid rounded">
-                <a href="https://vimeo.com/channels/staffpicks/93951774" class="play-button popup-vimeo"><span class="ion-md-play"></span></a>
 
               </figure>
             </div>
@@ -56,7 +55,8 @@
               <h2 class="text-black">How We Started</h2>
             </div>
             <p>For a project in our IT350 class, we created a marketplace where midshipmen can buy and sell items.</p>
-            <p>Accusantium dolor ratione maiores est deleniti nihil? Dignissimos est, sunt nulla illum autem in, quibusdam cumque recusandae, laudantium minima repellendus.</p>
+            <p>In order to start buying and selling, you must register and login in order to view all items. You must sign up using your 
+                @usna.edu email address in order for us to verify your identity.</p>
 
           </div>
         </div>
@@ -76,9 +76,8 @@
             <div class="block-38 text-center">
               <div class="block-38-img">
                 <div class="block-38-header">
-                  <img src="images/person_1.jpg" alt="Image placeholder" class="mb-4">
-                  <h3 class="block-38-heading h4">Elizabeth Graham</h3>
-                  <p class="block-38-subheading">CEO/Co-Founder</p>
+                  <img src="images/daker.jpg" alt="Image placeholder" class="mb-4">
+                  <h3 class="block-38-heading h4">Graham Daker</h3>
                 </div>
                 <div class="block-38-body">
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aut minima nihil sit distinctio recusandae doloribus ut fugit officia voluptate soluta. </p>
@@ -90,9 +89,8 @@
             <div class="block-38 text-center">
               <div class="block-38-img">
                 <div class="block-38-header">
-                  <img src="images/person_2.jpg" alt="Image placeholder" class="mb-4">
-                  <h3 class="block-38-heading h4">Jennifer Greive</h3>
-                  <p class="block-38-subheading">Co-Founder</p>
+                  <img src="images/hickman.jpg" alt="Image placeholder" class="mb-4">
+                  <h3 class="block-38-heading h4">Hunter Hickman</h3>
                 </div>
                 <div class="block-38-body">
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aut minima nihil sit distinctio recusandae doloribus ut fugit officia voluptate soluta. </p>
@@ -104,9 +102,8 @@
             <div class="block-38 text-center">
               <div class="block-38-img">
                 <div class="block-38-header">
-                  <img src="images/person_3.jpg" alt="Image placeholder" class="mb-4">
-                  <h3 class="block-38-heading h4">Patrick Marx</h3>
-                  <p class="block-38-subheading">Marketing</p>
+                  <img src="images/harrison.jpg" alt="Image placeholder" class="mb-4">
+                  <h3 class="block-38-heading h4">Harrison Bleckley</h3>
                 </div>
                 <div class="block-38-body">
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aut minima nihil sit distinctio recusandae doloribus ut fugit officia voluptate soluta. </p>
@@ -118,9 +115,8 @@
             <div class="block-38 text-center">
               <div class="block-38-img">
                 <div class="block-38-header">
-                  <img src="images/person_4.jpg" alt="Image placeholder" class="mb-4">
-                  <h3 class="block-38-heading h4">Mike Coolbert</h3>
-                  <p class="block-38-subheading">Sales Manager</p>
+                  <img src="images/babiera.png" alt="Image placeholder" class="mb-4">
+                  <h3 class="block-38-heading h4">RJ Babiera</h3>
                 </div>
                 <div class="block-38-body">
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aut minima nihil sit distinctio recusandae doloribus ut fugit officia voluptate soluta. </p>

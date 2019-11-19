@@ -55,10 +55,8 @@
   <div class="site-wrap">
 
     <?php
-        include('header.html');
+        include('header.php');
     ?>
-
-
 
     <div class="bg-light py-3">
       <div class="container">

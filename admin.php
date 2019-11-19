@@ -30,7 +30,7 @@
         xhttp.open("GET", "showUsers.php", true);
         xhttp.send();
       }
-      
+
       function displayItems(){
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
@@ -41,7 +41,7 @@
         xhttp.open("GET", "showItems.php", true);
         xhttp.send();
       }
-      
+
       function hideInfo(){
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
@@ -60,7 +60,7 @@
   <div class="site-wrap">
 
     <?php
-        include('header.html');
+        include('header.php');
     ?>
 
     <div class="site-section">
@@ -83,6 +83,7 @@
               <h3 class="mb-3 h6 text-uppercase text-black d-block">Menu</h3>
               <ul class="list-unstyled mb-0">
                 <li class="mb-1"><a href="#" class="d-flex" onclick="hideInfo()"><span>Admin Home</span></a></li>
+                <li class="mb-1"><a href="#" class="d-flex" onclick="showProfile()"><span>Your Profile</span></a></li>
                 <li class="mb-1"><a href="#" class="d-flex" onclick="displayUsers()"><span>Display All Users</span></a></li>
                 <li class="mb-1"><a href="#" class="d-flex" onclick="displayItems()"><span>Display All Items</span></a></li>
                 <li class="mb-1"><a href="#" class="d-flex"><span>Display All Information</span></a></li>

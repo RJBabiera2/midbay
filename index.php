@@ -25,7 +25,7 @@
   <div class="site-wrap">
 
     <?php
-        include('header.html');
+        include('header.php');
     ?>
 
     <div class="site-blocks-cover" style="background-image: url(images/indexPhoto.png);" data-aos="fade">
@@ -36,7 +36,7 @@
             <div class="intro-text text-center text-md-left">
               <p class="mb-4">midBay was created with the intention in mind to establish a marketplace created by mids for mids to sell their stuff and purchase other's goods.</p>
               <p>
-                <a href="shop.shtml" class="btn btn-sm btn-primary">Shop Now</a>
+                <a href="shop.php" class="btn btn-sm btn-primary">Shop Now</a>
               </p>
             </div>
           </div>
