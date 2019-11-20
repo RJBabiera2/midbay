@@ -31,8 +31,8 @@
     if($logIn){
       session_start();
       $_SESSION['login'] = true;
-
-      header("Location: index.html");
+      $_SESSION['username'] = $user;
+      header("Location: index.php");
     }
     else
       //header("Location: login.html");
