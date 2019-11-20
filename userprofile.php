@@ -14,11 +14,26 @@
 
 <head>
   <meta charset="utf-8" />
-
+  <title>Profile</title>
   <!--Meta tag descriptors-->
   <meta name="description" content="User profile">
   <meta name="keywords" content="Registration, Results">
   <meta name="author" content="Harrison Bleckley">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+
+  <link rel="stylesheet" href="css/aos.css">
+
+  <link rel="stylesheet" href="css/style.css">
   <style>
     table, th, td {
     border: 1px solid black;
@@ -29,6 +44,11 @@
 </head>
 
 <body>
+
+  <?php
+      include('header.php');
+  ?>
+
   <h1>Welcome, User!</h1>
 
   <?php
