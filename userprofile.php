@@ -102,6 +102,10 @@
   ?>
     </tbody>
   </table>
+  
+  <div class="col-md-12" style="width:200px">
+    <button class="btn btn-primary btn-lg py-3 btn-block" onclick="window.location='logout.php'">Logout</button>
+  </div>
 
 </body>
 
