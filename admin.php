@@ -89,6 +89,9 @@
                 <li class="mb-1"><a href="#" class="d-flex"><span>Display All Information</span></a></li>
               </ul>
             </div>
+            <div class="col-md-12" style="width:200px">
+              <button class="btn btn-primary btn-lg py-3 btn-block" onclick="window.location='logout.php'">Logout</button>
+            </div>
           </div>
         </div>
       </div>
