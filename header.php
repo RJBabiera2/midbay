@@ -1,17 +1,17 @@
 <?php
   session_start();
 
-  if(!isset($_SESSION["username"])){
-    $PROFILE = "login.php";
-    $SHOP = "login.php";
-    $CART = "login.php";
-    $showSearch = false;
-  }
-  else{
+  if(isset($_SESSION['username'])){
     $PROFILE = "userprofile.php";
     $SHOP = "shop.php";
     $CART = "cart.php";
     $showSearch = true;
+  }
+  else{
+    $PROFILE = "login.php";
+    $SHOP = "login.php";
+    $CART = "login.php";
+    $showSearch = false;
   }
  ?>
 
