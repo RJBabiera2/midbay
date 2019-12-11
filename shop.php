@@ -30,6 +30,32 @@
           xhttp.send();
         }
       }
+
+      function addCookie(a){
+        // var cookieSet = document.cookie; //get current cookie
+        var readCookie = document.cookie;
+
+        var allCookies = readCookie.split(";"); //all teh cookies in an array
+        var toSet = ""; //varaible to set the cokoies to
+
+        for(var i=0; i<allCookies.length; i++){
+          if (allCookies[i].includes("cart")){
+            toSet = allCookies[i];
+            break;
+          }
+
+          toSet = "cart=";
+        }
+
+        toSet += "-";
+        toSet += a; //add this cookie
+        toSet += "-;";
+
+        //document.writeln(cookieSet);
+        document.cookie = toSet;
+        //document.writeln(document.cookie);
+      };
+
     </script>
     <title>Shop</title>
     <meta charset="utf-8">
@@ -76,8 +102,8 @@
               <div class="col-md-12 mb-5">
                 <div class="float-md-left mb-4"><h2 class="text-black h5">Shop All</h2></div>
                 <div class="d-flex">
-                  
-                  
+
+
                 </div>
               </div>
             </div>
@@ -104,10 +130,15 @@
               echo ($all[2]);
               echo "</a></h3>";
               echo "<p class=\"mb-0\" id=\"0-subname\">";
-              echo($all[4]);
+              echo($all[3]);
               echo "</p>";
               echo "<p class=\"text-primary font-weight-bold\" id=\"0-price\">";
               echo($all[1]);
+              echo "<br>";
+              echo "<button class=\"btn btn-outline-primary btn-sm btn-block\" onclick=\"addCookie(";
+              echo ($all[0]); //id
+              echo ")\">Add to Cart </button>";
+              //echo "<button value=\"Add to Cart\" id=\"add\" onclick=\"addToCart(" + $all[0] + ")";
               echo "</p>";
               echo "</div></div></div>";
 
@@ -116,7 +147,7 @@
 
 
             </div>
-            
+
           </div>
 
           <div class="col-md-3 order-1 mb-5 mb-md-0">

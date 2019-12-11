@@ -19,6 +19,12 @@
 
     <link rel="stylesheet" href="css/style.css">
 
+    <script>
+      function removeCookie(){
+        document.cookie = "cart=; expires==Thu, 01 Jan 1970 00:00:00 UTC;"; //taken from w3
+        document.reload();
+      }
+    </script>
   </head>
   <body>
 
@@ -51,7 +57,53 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+
+                  <?php
+                    //getting cookie data
+                    $cart = "cart";
+                    $toFind = $_COOKIE[$cart];
+                    $possibleFinds = explode("-",$toFind);
+
+                    echo($toFind);
+
+                    //opening uploads file
+                    $fp = fopen("uploads.txt", 'r');
+
+                    $toSend = array();
+                    $print = false;
+
+                    while ($line = fgets($fp)){
+                      $all = explode("\t", $line);
+
+                      for($i=0; $i<count($possibleFinds); $i++){
+                        if($possibleFinds[$i] == $all[0])
+                          $print = true;
+                      }
+
+                      if($print){
+                          echo "<tr>";
+                          echo "<td class=\"product-thumbnail\">";
+                          echo "<img src=\"";
+                          echo($all[5]);
+                          echo "images/cloth_1.jpg\" alt=\"Image\" class=\"img-fluid\">";
+                          echo "</td>";
+                          echo "<td class=\"product-name\">";
+                          echo "<h2 class=\"h5 text-black\">";
+                          echo($all[2]);
+                          echo "</h2>";
+                          echo "</td>";
+                          echo "<td>";
+                          echo($all[1]);
+                          echo "</td>";
+                          echo "<td><a onclick=\"removeCookie(";
+                          echo($all[0]);
+                          echo ")\" class=\"btn btn-primary btn-sm\">X</a></td>";
+                          echo "</tr>";
+                          $print = false;
+                      }
+                    }
+                  ?>
+                  <!-- <tr>
                     <td class="product-thumbnail">
                       <img src="images/cloth_1.jpg" alt="Image" class="img-fluid">
                     </td>
@@ -60,18 +112,9 @@
                     </td>
                     <td>$49.00</td>
                     <td><a href="#" class="btn btn-primary btn-sm">X</a></td>
-                  </tr>
+                  </tr> -->
 
-                  <tr>
-                    <td class="product-thumbnail">
-                      <img src="images/cloth_2.jpg" alt="Image" class="img-fluid">
-                    </td>
-                    <td class="product-name">
-                      <h2 class="h5 text-black">Polo Shirt</h2>
-                    </td>
-                    <td>$49.00</td>
-                    <td><a href="#" class="btn btn-primary btn-sm">X</a></td>
-                  </tr>
+
                 </tbody>
               </table>
             </div>
