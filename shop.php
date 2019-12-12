@@ -54,6 +54,8 @@
         //document.writeln(cookieSet);
         document.cookie = toSet;
         //document.writeln(document.cookie);
+
+        alert("Item added!");
       };
 
     </script>
@@ -121,9 +123,9 @@
               echo "<div class=\"col-sm-6 col-lg-4 mb-4\" data-aos=\"fade-up\">";
               echo "<div class=\"block-4 text-center border\">";
               echo "<figure class=\"block-4-image\">";
-              echo "<a href=\"shop-single.html\"><img src=./";
+              echo "<img src=./";
               echo($all[5]);
-              echo "alt=\"Image placeholder\" class=\"img-fluid\"></a>";
+              echo " alt=\"Image placeholder\" class=\"img-fluid\"></a>";
               echo "</figure>";
               echo "<div class=\"block-4-text p-4\">";
               echo "<h3><a href=\"shop-single.html\" id=\"0-name\">";
@@ -160,27 +162,7 @@
               </ul>
             </div>
 
-            <div class="border p-4 rounded mb-4">
-              <div class="mb-4">
-                <h3 class="mb-3 h6 text-uppercase text-black d-block">Filter by Price</h3>
-                <div id="slider-range" class="border-primary"></div>
-                <input type="text" name="text" id="amount" class="form-control border-0 pl-0 bg-white" disabled="" />
-              </div>
 
-              <div class="mb-4">
-                <h3 class="mb-3 h6 text-uppercase text-black d-block">Size</h3>
-                <label for="s_sm" class="d-flex">
-                  <input type="checkbox" id="s_sm" class="mr-2 mt-1"> <span class="text-black">Small (2,319)</span>
-                </label>
-                <label for="s_md" class="d-flex">
-                  <input type="checkbox" id="s_md" class="mr-2 mt-1"> <span class="text-black">Medium (1,282)</span>
-                </label>
-                <label for="s_lg" class="d-flex">
-                  <input type="checkbox" id="s_lg" class="mr-2 mt-1"> <span class="text-black">Large (1,392)</span>
-                </label>
-              </div>
-
-            </div>
           </div>
         </div>
       </div>
@@ -196,55 +178,34 @@
               </div>
               <div class="col-md-6 col-lg-4">
                 <ul class="list-unstyled">
-                  <li><a href="#">Sell online</a></li>
-                  <li><a href="#">Features</a></li>
-                  <li><a href="#">Shopping cart</a></li>
-                  <li><a href="#">Store builder</a></li>
+                  <li><a href="upload.php">Sell online</a></li>
+                  <li><a href="cart.php">Shopping cart</a></li>
                 </ul>
               </div>
               <div class="col-md-6 col-lg-4">
                 <ul class="list-unstyled">
-                  <li><a href="#">Mobile commerce</a></li>
-                  <li><a href="#">Dropshipping</a></li>
-                  <li><a href="#">Website development</a></li>
+                  <li><a href="about.php">About</a></li>
                 </ul>
               </div>
               <div class="col-md-6 col-lg-4">
                 <ul class="list-unstyled">
-                  <li><a href="#">Point of sale</a></li>
-                  <li><a href="#">Hardware</a></li>
-                  <li><a href="#">Software</a></li>
+                  <li><a href="shop.php">Shop</a></li>
+                  <li><a href="signUp.php">Sign up</a></li>
                 </ul>
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-            <h3 class="footer-heading mb-4">Promo</h3>
-            <a href="#" class="block-6">
-              <img src="images/hero_1.jpg" alt="Image placeholder" class="img-fluid rounded mb-4">
-              <h3 class="font-weight-light  mb-0">Finding Your Perfect Shoes</h3>
-              <p>Promo from  nuary 15 &mdash; 25, 2019</p>
-            </a>
-          </div>
+
           <div class="col-md-6 col-lg-3">
             <div class="block-5 mb-5">
               <h3 class="footer-heading mb-4">Contact Info</h3>
               <ul class="list-unstyled">
-                <li class="address">203 Fake St. Mountain View, San Francisco, California, USA</li>
-                <li class="phone"><a href="tel://23923929210">+2 392 3929 210</a></li>
-                <li class="email">emailaddress@domain.com</li>
+                <li class="address">Annapolis, MD</li>
+                <li class="phone"><a href="tel://6788008900">678 800 8900</a></li>
+                <li class="email">m211332@usna.edu</li>
               </ul>
             </div>
 
-            <div class="block-7">
-              <form action="#" method="post">
-                <label for="email_subscribe" class="footer-heading">Subscribe</label>
-                <div class="form-group">
-                  <input type="text" class="form-control py-4" id="email_subscribe" placeholder="Email">
-                  <input type="submit" class="btn btn-sm btn-primary" value="Send">
-                </div>
-              </form>
-            </div>
           </div>
         </div>
         <div class="row pt-5 mt-5 text-center">
@@ -260,33 +221,6 @@
       </div>
     </footer>
   </div>
-
-  <!-- <script>
-    var xhttp = new XMLHttpRequest();
-    //document.getElementById("0-name").innerHTML = "toast";
-    xhttp.onreadystatechange = function(){
-      if (this.readyState == 4 && this.status == 200){
-        var toParse = this.responseText;
-        toParse = JSON.parse(toParse);
-        var toWrite = new Array();
-
-        for(var i=0; i<toParse.length; i++){
-          toWrite[i] = toParse[i].split("\t");
-        }
-
-        for(var i=0; i<toParse.length; i++){
-          document.getElementById(i+"-name").innerHTML = toWrite[i][2];
-          document.getElementById(i+"-subname").innerHTML = toWrite[i][4];
-          document.getElementById(i+"-price").innerHTML = toWrite[i][1];
-        }
-      }
-    };
-
-    xhttp.open("GET", "getUploads.php", true);
-    xhttp.send();
-
-
-  </script> -->
 
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery-ui.js"></script>

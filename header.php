@@ -57,6 +57,7 @@
         <li><a href="about.php">About</a></li>
         <li><a href=<?php echo $SHOP ?>>Shop</a></li>
         <li><a href="contact.php">Contact</a></li>
+        <li><a href="upload.php">Upload</a></li>
       </ul>
     </div>
   </nav>
