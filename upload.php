@@ -26,11 +26,11 @@
   </head>
 
   <body>
-    
+
     <?php
         include('header.php');
     ?>
-    
+
     <div class="site-section">
       <div class="container">
         <div>
@@ -58,6 +58,12 @@
                 </div>
                 <div class="form-group row">
                   <div class="col-md-12">
+                    <label class="text-black">Venmo </label>
+                    <input type="text" class="form-control" name="venmo" required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-md-12">
                     <label class="text-black">Description </label>
                     <textarea name="description" class="form-control" rows="8" cols="50" required></textarea>
                   </div>
@@ -77,7 +83,7 @@
               </div>
             </form>
           </div>
-          
+
         </div>
       </div>
     </div>

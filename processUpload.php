@@ -98,11 +98,12 @@
         $name = $_POST['title'];
         $contact = $_POST['contact'];
         $desc = $_POST['description'];
+        $venmo = $_POST['venmo'];
 
         //open the file
         $fp = fopen("uploads.txt", 'a+');
 
-        $toWrite = $id."\t".$price."\t".$name."\t".$contact."\t".$desc."\t".$target_file."\n";
+        $toWrite = $id."\t".$price."\t".$name."\t".$contact."\t".$desc."\t".$target_file."\t".$venmo."\n";
         fwrite($fp, $toWrite);
         fclose($file);
 
