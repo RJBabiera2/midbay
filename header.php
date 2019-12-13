@@ -21,9 +21,10 @@
       <div class="row align-items-center">
 
         <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left" >
-          <form action="" class="site-block-top-search" <?php if($showSearch == false){ echo 'style="display:none"'; }?>>
+          <form action="search.php" method="get" class="site-block-top-search" <?php if($showSearch == false){ echo 'style="display:none"'; }?>>
             <span class="icon icon-search2"></span>
-            <input type="text" onsubmit="search(this.value)" class="form-control border-0" id = "search" placeholder="Search">
+            <input type="text" name="query" class="form-control border-0" placeholder="Search term"/ id = "search">
+            <input type="submit" value= "Search"/>
           </form>
         </div>
 
@@ -57,7 +58,6 @@
         <li><a href="about.php">About</a></li>
         <li><a href=<?php echo $SHOP ?>>Shop</a></li>
         <li><a href="contact.php">Contact</a></li>
-        <li><a href="upload.php">Upload</a></li>
       </ul>
     </div>
   </nav>
