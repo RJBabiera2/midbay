@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<?php
+  session_start();
+  
+  if(!isset($_SESSION['username'])){
+    header("Location: noAccessPage.php");
+  }
+ ?>
 <html lang="en">
   <head>
     <title>Checkout</title>
@@ -125,6 +132,9 @@
           to Venmo. After the sellers have received the money, they will
           send you your item. Thank you for using our site!
         </p>
-
+        
+        <?php
+            include('footer.php');
+        ?>
   </body>
 </html>

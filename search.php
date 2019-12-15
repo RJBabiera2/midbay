@@ -1,24 +1,27 @@
 <?php
-  $searchItem = isset($_GET['query'])?$_GET['query']: '';
-  //$query = $_GET["q"];
-
-  $fp = fopen("uploads.txt", "r");
-  $searchResults = array();
-  $send = false;
-  $count = 0;
-
-  while($line = fgets($fp)){
-
-    $allLine = explode("\t", $line);
-    if(strcmp($searchItem, $allLine[2]) == 0){ // if match, put in send aray
-      $searchResults[$count] = $line;
-      $count++;
-    }
-
+  session_start();
+  if(!isset($_SESSION['username'])){
+    header("Location: noAccessPage.php");
   }
-
-  //echo json_encode($toSend);
- ?>
+  $query = $_GET["q"];	  $searchItem = isset($_GET['query'])?$_GET['query']: '';
+  //$query = $_GET["q"];
+  $fp = fopen("uploads.txt", "r");	  $fp = fopen("uploads.txt", "r");
+  $toSend = array();	  $searchResults = array();
+  $send = false;	  $send = false;
+  $count = 0;
+  while($line = fgets($fp)){	  while($line = fgets($fp)){
+    $allLine = explode("\t", $line);	    $allLine = explode("\t", $line);
+    for($i=0; $i<count($allLine); $i++){	    if(strcmp($searchItem, $allLine[2]) == 0){ // if match, put in send aray
+      $searchResults[$count] = $line;
+      if(strcmp($query, $allLine[$i]) == 0){ // if match, put in send aray	      $count++;
+        echo("got here");	
+        $toSend[$count] = $line;	
+        $count++;	
+      }	
+    }	    }
+  }	  }
+  echo json_encode($toSend);	  //echo json_encode($toSend);
+ ?>	 ?>
 
  <!DOCTYPE html>
  <html lang="en">

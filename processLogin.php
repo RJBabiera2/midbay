@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-
-<html lang = "en">
-  <head>
-    <meta charset = "UTF-8">
-    <title> Sign up </title>
-  </head>
 
   <?php
+    
     //get data
     $user = $_POST['user'];
     $pass = $_POST['passwd'];
@@ -33,7 +27,6 @@
     $admintext;
 
     //iterate through file loooking for matches
-    $logIn = false;
     while($line = fgets($fp)){
       $text = explode(" ", $line);
       var_dump($text);
@@ -64,6 +57,6 @@
         
       header("Location: index.php");
     }
+    
+  
    ?>
-
-   </html>

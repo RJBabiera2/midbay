@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-
+<?php 
+session_start();
+if(!isset($_SESSION['admin'])){
+  header("Location: noAccessPage.php");
+}
+ ?>
 <html lang = "en">
   <head>
     <meta charset = "UTF-8">
@@ -20,12 +25,12 @@
 
   <?php
     //get the data
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $venmo = $_POST['venmo'];
-    $password = $_POST['password'];
+    $firstname = strip_tags($_POST['firstname']);
+    $lastname = strip_tags($_POST['lastname']);
+    $username = strip_tags($_POST['username']);
+    $email = strip_tags($_POST['email']);
+    $venmo = strip_tags($_POST['venmo']);
+    $password = strip_tags($_POST['password']);
     
     //open the file and write
     $file = fopen("needVerify.txt", 'a+');
