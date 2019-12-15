@@ -1,5 +1,5 @@
 <?php
-  $itemsFile = "items.txt";
+  $itemsFile = "uploads.txt";
   $fh = fopen($itemsFile, "r");
   echo "<ul>";
   if($fh){

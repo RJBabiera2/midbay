@@ -1,5 +1,5 @@
 <?php
-  $searchItem = isset($_GET['query'])?$_GET['query']: '';
+  $searchItem = "watch";
   //$query = $_GET["q"];
 
   $fp = fopen("uploads.txt", "r");
@@ -10,7 +10,7 @@
   while($line = fgets($fp)){
 
     $allLine = explode("\t", $line);
-    if(strcmp($searchItem, $allLine[2]) == 0){ // if match, put in send aray
+    if(strcmp($searchItem, $allLine[3]) == 0){ // if match, put in send aray
       $searchResults[$count] = $line;
       $count++;
     }
