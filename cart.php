@@ -1,11 +1,4 @@
 <!DOCTYPE html>
-<?php
-  session_start();
-  
-  if(!isset($_SESSION['username'])){
-    header("Location: login.php");
-  }
- ?>
 <html lang="en">
   <head>
     <title>Cart</title>
@@ -192,9 +185,58 @@
       </div>
     </div>
 
-    <?php
-        include('footer.php');
-    ?>
+    <footer class="site-footer border-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <div class="row">
+              <div class="col-md-12">
+                <h3 class="footer-heading mb-4">Navigations</h3>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <ul class="list-unstyled">
+                  <li><a href="upload.php">Sell online</a></li>
+                  <li><a href="cart.php">Shopping cart</a></li>
+                </ul>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <ul class="list-unstyled">
+                  <li><a href="about.php">About</a></li>
+                </ul>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <ul class="list-unstyled">
+                  <li><a href="shop.php">Shop</a></li>
+                  <li><a href="signUp.php">Sign up</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="block-5 mb-5">
+              <h3 class="footer-heading mb-4">Contact Info</h3>
+              <ul class="list-unstyled">
+                <li class="address">Annapolis, MD</li>
+                <li class="phone"><a href="tel://6788008900">678 800 8900</a></li>
+                <li class="email">m211332@usna.edu</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" class="text-primary">Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </footer>
   </div>
 
   <script src="js/jquery-3.3.1.min.js"></script>
