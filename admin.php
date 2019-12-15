@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="css/style.css">
 
     <script>
-    
+
       function displayVerify(){
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
@@ -35,11 +35,11 @@
                 + "<button class='btn btn-primary'>Verify User</button>";
           }
         };
-        
+
         xhttp.open("GET", "showToVerify.php", true);
         xhttp.send();
       }
-    
+
       function displayUsers(){
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
@@ -72,7 +72,7 @@
         xhttp.open("GET", "hideInfo.php", true);
         xhttp.send();
       }
-      
+
       function showProfile(){
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
@@ -138,43 +138,31 @@
               </div>
               <div class="col-md-6 col-lg-4">
                 <ul class="list-unstyled">
-                  <li><a href="#">Sell online</a></li>
-                  <li><a href="#">Features</a></li>
-                  <li><a href="#">Shopping cart</a></li>
-                  <li><a href="#">Store builder</a></li>
+                  <li><a href="upload.php">Sell online</a></li>
+                  <li><a href="cart.php">Shopping cart</a></li>
                 </ul>
               </div>
               <div class="col-md-6 col-lg-4">
                 <ul class="list-unstyled">
-                  <li><a href="#">Mobile commerce</a></li>
-                  <li><a href="#">Dropshipping</a></li>
-                  <li><a href="#">Website development</a></li>
+                  <li><a href="about.php">About</a></li>
                 </ul>
               </div>
               <div class="col-md-6 col-lg-4">
                 <ul class="list-unstyled">
-                  <li><a href="#">Point of sale</a></li>
-                  <li><a href="#">Hardware</a></li>
-                  <li><a href="#">Software</a></li>
+                  <li><a href="shop.php">Shop</a></li>
+                  <li><a href="signUp.php">Sign up</a></li>
                 </ul>
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-            <h3 class="footer-heading mb-4">Promo</h3>
-            <a href="#" class="block-6">
-              <img src="images/hero_1.jpg" alt="Image placeholder" class="img-fluid rounded mb-4">
-              <h3 class="font-weight-light  mb-0">Finding Your Perfect Shoes</h3>
-              <p>Promo from  nuary 15 &mdash; 25, 2019</p>
-            </a>
-          </div>
+
           <div class="col-md-6 col-lg-3">
             <div class="block-5 mb-5">
               <h3 class="footer-heading mb-4">Contact Info</h3>
               <ul class="list-unstyled">
-                <li class="address">203 Fake St. Mountain View, San Francisco, California, USA</li>
-                <li class="phone"><a href="tel://23923929210">+2 392 3929 210</a></li>
-                <li class="email">emailaddress@domain.com</li>
+                <li class="address">Annapolis, MD</li>
+                <li class="phone"><a href="tel://6788008900">678 800 8900</a></li>
+                <li class="email">m211332@usna.edu</li>
               </ul>
             </div>
 

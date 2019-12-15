@@ -26,9 +26,9 @@
         break;
       }
     }
-    
+
     fclose($fp);
-    
+
     $fp = fopen("admins.txt", 'r');
     $admintext;
 
@@ -45,9 +45,9 @@
         break;
       }
     }
-    
+
     fclose($fp);
-    
+
     if($logIn){
       session_start();
       $_SESSION['login'] = true;
@@ -61,8 +61,11 @@
         $_SESSION['email'] = $admintext[4];
         $_SESSION['venmo'] = $admintext[5];
       }
-        
+
       header("Location: index.php");
+    }
+    else{
+      header("Location: login.php");
     }
    ?>
 
