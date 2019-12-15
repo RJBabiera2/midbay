@@ -1,10 +1,5 @@
 <!DOCTYPE html>
-<?php 
-session_start();
-if(!isset($_SESSION['admin'])){
-  header("Location: noAccessPage.php");
-}
- ?>
+
 <html lang = "en">
   <head>
     <meta charset = "UTF-8">
@@ -31,7 +26,7 @@ if(!isset($_SESSION['admin'])){
     $email = strip_tags($_POST['email']);
     $venmo = strip_tags($_POST['venmo']);
     $password = strip_tags($_POST['password']);
-    
+
     //open the file and write
     $file = fopen("needVerify.txt", 'a+');
 
@@ -40,13 +35,13 @@ if(!isset($_SESSION['admin'])){
     fwrite($file, $toWrite);
     fclose($file);
    ?>
-   
+
    <body>
-     
+
      <?php
          include('header.php');
      ?>
-     
+
      <div class="site-section">
        <div class="container">
          <div class="row">
@@ -57,7 +52,7 @@ if(!isset($_SESSION['admin'])){
          </div>
        </div>
      </div>
-     
+
      <?php
          include('footer.php');
      ?>

@@ -1,11 +1,5 @@
 <!DOCTYPE html>
-<?php
-  session_start();
-  
-  if(!isset($_SESSION['username'])){
-    header("Location: noAccessPage.php");
-  }
- ?>
+
 <html lang = "en">
   <head>
     <title> Upload Item </title>
@@ -100,11 +94,11 @@
         fclose($write);
 
         //get data
-        $price = $_POST['price'];
-        $name = $_POST['title'];
-        $contact = $_POST['contact'];
-        $desc = $_POST['description'];
-        $venmo = $_POST['venmo'];
+        $price = strip_tags($_POST['price']);
+        $name = strip_tags($_POST['title']);
+        $contact = strip_tags($_POST['contact']);
+        $desc = strip_tags($_POST['description']);
+        $venmo = strip_tags($_POST['venmo']);
 
         //open the file
         $fp = fopen("uploads.txt", 'a+');

@@ -55,7 +55,7 @@
               <h2 class="text-black">How We Started</h2>
             </div>
             <p>For a project in our IT350 class, we created a marketplace where midshipmen can buy and sell items.</p>
-            <p>In order to start buying and selling, you must register and login in order to view all items. You must sign up using your 
+            <p>In order to start buying and selling, you must register and login in order to view all items. You must sign up using your
                 @usna.edu email address in order for us to verify your identity.</p>
 
           </div>
@@ -138,35 +138,31 @@
               </div>
               <div class="col-md-6 col-lg-4">
                 <ul class="list-unstyled">
-                  <li><a href="#">Sell online</a></li>
-                  <li><a href="#">Features</a></li>
-                  <li><a href="#">Shopping cart</a></li>
-                  <li><a href="#">Store builder</a></li>
+                  <li><a href="upload.php">Sell online</a></li>
+                  <li><a href="cart.php">Shopping cart</a></li>
                 </ul>
               </div>
               <div class="col-md-6 col-lg-4">
                 <ul class="list-unstyled">
-                  <li><a href="#">Mobile commerce</a></li>
-                  <li><a href="#">Dropshipping</a></li>
-                  <li><a href="#">Website development</a></li>
+                  <li><a href="about.php">About</a></li>
                 </ul>
               </div>
               <div class="col-md-6 col-lg-4">
                 <ul class="list-unstyled">
-                  <li><a href="#">Point of sale</a></li>
-                  <li><a href="#">Hardware</a></li>
-                  <li><a href="#">Software</a></li>
+                  <li><a href="shop.php">Shop</a></li>
+                  <li><a href="signUp.php">Sign up</a></li>
                 </ul>
               </div>
             </div>
           </div>
+
           <div class="col-md-6 col-lg-3">
             <div class="block-5 mb-5">
               <h3 class="footer-heading mb-4">Contact Info</h3>
               <ul class="list-unstyled">
-                <li class="address">203 Fake St. Mountain View, San Francisco, California, USA</li>
-                <li class="phone"><a href="tel://23923929210">+2 392 3929 210</a></li>
-                <li class="email">emailaddress@domain.com</li>
+                <li class="address">Annapolis, MD</li>
+                <li class="phone"><a href="tel://6788008900">678 800 8900</a></li>
+                <li class="email">m211332@usna.edu</li>
               </ul>
             </div>
 

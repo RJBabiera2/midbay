@@ -1,11 +1,4 @@
 <?php
-    
-  session_start();
-
-  if(!isset($_SESSION['admin'])){
-    header("Location: noAccessPage.php");
-  }
-
   $fp = fopen("uploads.txt", 'r');
 
   $toSend = array();

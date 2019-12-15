@@ -1,6 +1,12 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+  <head>
+    <meta charset = "UTF-8">
+    <title> Sign up </title>
+  </head>
 
   <?php
-    
     //get data
     $user = $_POST['user'];
     $pass = $_POST['passwd'];
@@ -20,13 +26,14 @@
         break;
       }
     }
-    
+
     fclose($fp);
-    
+
     $fp = fopen("admins.txt", 'r');
     $admintext;
 
     //iterate through file loooking for matches
+    $logIn = false;
     while($line = fgets($fp)){
       $text = explode(" ", $line);
       var_dump($text);
@@ -38,9 +45,9 @@
         break;
       }
     }
-    
+
     fclose($fp);
-    
+
     if($logIn){
       session_start();
       $_SESSION['login'] = true;
@@ -54,9 +61,12 @@
         $_SESSION['email'] = $admintext[4];
         $_SESSION['venmo'] = $admintext[5];
       }
-        
+
       header("Location: index.php");
     }
-    
-  
+    else{
+      header("Location: login.php");
+    }
    ?>
+
+   </html>
