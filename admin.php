@@ -16,10 +16,30 @@
 
 
     <link rel="stylesheet" href="css/aos.css">
-
     <link rel="stylesheet" href="css/style.css">
 
     <script>
+    
+      function displayVerify(){
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+             var element = document.getElementById("info");
+             element.innerHTML = xhttp.responseText;
+             element.innerHTML += '<form method="post" action="verifyUser.php">'
+                + '<div class="form-group row">'
+                + "<div class='col-md-6'>"
+                + "<input style='width: 300px;'type='text' class='form-control' id='username' name='username'>"
+                + "</div>"
+                + "<div class='col-md-6' style='left:20px'>"
+                + "<button class='btn btn-primary'>Verify User</button>";
+          }
+        };
+        
+        xhttp.open("GET", "showToVerify.php", true);
+        xhttp.send();
+      }
+    
       function displayUsers(){
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
@@ -52,6 +72,17 @@
         xhttp.open("GET", "hideInfo.php", true);
         xhttp.send();
       }
+      
+      function showProfile(){
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+             document.getElementById("info").innerHTML = xhttp.responseText;
+          }
+        };
+        xhttp.open("GET", "showProfile.php", true);
+        xhttp.send();
+      }
     </script>
 
   </head>
@@ -68,7 +99,7 @@
 
         <div class="row mb-5">
           <div class="col-md-9 order-2">
-            <div class="p-3 p-lg-5 border">
+            <div class="p-3 p-lg-5 border" style="padding:0;">
               <div id="info" class="row mb-5 text-center text-black">
                 <div class="col-md-12 text-center">
                   <h2 class="display-4 text-black">Welcome to your Admin Page</h2>
@@ -84,9 +115,9 @@
               <ul class="list-unstyled mb-0">
                 <li class="mb-1"><a href="#" class="d-flex" onclick="hideInfo()"><span>Admin Home</span></a></li>
                 <li class="mb-1"><a href="#" class="d-flex" onclick="showProfile()"><span>Your Profile</span></a></li>
+                <li class="mb-1"><a href="#" class="d-flex" onclick="displayVerify()"><span>Verify Users</span></a></li>
                 <li class="mb-1"><a href="#" class="d-flex" onclick="displayUsers()"><span>Display All Users</span></a></li>
                 <li class="mb-1"><a href="#" class="d-flex" onclick="displayItems()"><span>Display All Items</span></a></li>
-                <li class="mb-1"><a href="#" class="d-flex"><span>Display All Information</span></a></li>
               </ul>
             </div>
             <div class="col-md-12" style="width:200px">

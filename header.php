@@ -13,6 +13,10 @@
     $CART = "login.php";
     $showSearch = false;
   }
+  
+  if(isset($_SESSION['admin'])){
+    $PROFILE = "admin.php";
+  }
  ?>
 
 <header class="site-navbar" role="banner">
@@ -22,9 +26,8 @@
 
         <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left" >
           <form action="search.php" method="get" class="site-block-top-search" <?php if($showSearch == false){ echo 'style="display:none"'; }?>>
-            <span class="icon icon-search2"></span>
-            <input type="text" name="query" class="form-control border-0" placeholder="Search term"/ id = "search">
-            <input type="submit" value= "Search"/>
+            <input style="width: 200px; padding: 2px" type="text" name="query" class="form-control border-0" placeholder="Search term"/ id = "search">
+            <input style="padding: 1px"type="submit" value= "Search"/>
           </form>
         </div>
 
@@ -58,6 +61,14 @@
         <li><a href="about.php">About</a></li>
         <li><a href=<?php echo $SHOP ?>>Shop</a></li>
         <li><a href="contact.php">Contact</a></li>
+        <?php 
+          if(isset($_SESSION['username'])){
+              echo '<li><a href="upload.php">Upload</a></li>';
+          }
+          else{
+                echo '<li><a href="login.php">Login</a></li>';
+          }
+         ?>
       </ul>
     </div>
   </nav>

@@ -34,7 +34,7 @@
           <h2 class="h2 mb-1 text-black" style="text-align: center">Create a New Account</h2>
           <div class="p-3 p-lg-5 border">
 
-            <form method="post" action="signUp.php">
+            <form method="post" action="processRegistration.php">
 
             <div class="form-group row">
               <div class="col-md-12">
@@ -49,11 +49,18 @@
                 <input type="text" class="form-control" id="lastname" name="lastname">
               </div>
             </div>
-
+            
             <div class="form-group row">
               <div class="col-md-12">
                 <label class="h5 text-black">Username</label>
                 <input type="text" class="form-control" id="username" name="username">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <div class="col-md-12">
+                <label class="h5 text-black">E-mail</label>
+                <input type="email" class="form-control" id="email" name="email">
               </div>
             </div>
 
@@ -61,13 +68,6 @@
               <div class="col-md-12">
                 <label class="h5 text-black">Venmo</label>
                 <input type="text" class="form-control" id="venmo" name="venmo">
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <div class="col-md-12">
-                <label class="h5 text-black">E-mail</label>
-                <input type="email" class="form-control" id="email" name="email">
               </div>
             </div>
 
