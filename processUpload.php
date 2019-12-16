@@ -32,18 +32,15 @@
     </h1>
 
     <?php
-
       $num = fopen("currentId.txt", 'r+');
       $numString = fgets($num);
       fclose($num);
       $id = intval($numString); //taken from w3
-
       //taken directly from w3schools
       $target_dir = "images/userImg/";
       $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
       $uploadOk = 1;
       $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-
       // Check if image file is a actual image or fake image
       if(isset($_POST["submit"])) {
         echo "gothere";
@@ -75,7 +72,6 @@
       // Check if $uploadOk is set to 0 by an error
       if ($uploadOk == 0) {
         echo "<h2 class='h2 mb-3 text-black' style='text-align: center;'>Sorry, your file was not uploaded.</h2>";
-
       // if everything is ok, try to upload file
       } else {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
@@ -84,7 +80,6 @@
             echo "<h2 class='h2 mb-3 text-black' style='text-align: center;'>Sorry, there was an error uploading your file.,/h2>";
         }
       }
-
       if ($uploadOk != 0) {
         $id++;
         $write = fopen("currentId.txt", 'w+');
@@ -92,21 +87,18 @@
         fwrite($write, $id);
         echo "<h2 class='h2 mb-3 text-black' style='text-align: center;'>The id of your item is ". $id. "</h2>";
         fclose($write);
-
         //get data
         $price = strip_tags($_POST['price']);
         $name = strip_tags($_POST['title']);
+        $category = strip_tags($_POST['category']);
         $contact = strip_tags($_POST['contact']);
         $desc = strip_tags($_POST['description']);
         $venmo = strip_tags($_POST['venmo']);
-
         //open the file
         $fp = fopen("uploads.txt", 'a+');
-
-        $toWrite = $id."\t".$price."\t".$name."\t".$contact."\t".$desc."\t".$target_file."\t".$venmo."\n";
+        $toWrite = $id."\t".$price."\t".$name."\t".$category."\t".$contact."\t".$desc."\t".$target_file."\t".$venmo."\n";
         fwrite($fp, $toWrite);
         fclose($file);
-
         echo "<h2 class='h2 mb-4 text-black' style='text-align: center;'>Thank you for uploading an item!</h2>";
       }
     ?>

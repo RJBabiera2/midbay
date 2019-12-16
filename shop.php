@@ -2,34 +2,6 @@
 <html lang="en">
   <head>
     <script>
-      //should call a search
-      function search(a){
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function(){
-          if (this.readyState == 4 && this.status == 200){
-            var toParse = this.responseText;
-            toParse = JSON.parse(toParse);
-            var toWrite = new Array();
-
-            for(var i=0; i<toParse.length; i++){
-              toWrite[i] = toParse[i].split("\t");
-            }
-
-            //document.writeln(toParse.length);
-            //one table row epr loop
-            for(var i=0; i<toWrite.length; i++){
-              for(var j=1; j<5; j++){
-                var toChange = document.getElementById("in"+i+" "+j);
-                toChange.innerHTML = toWrite[i][j];
-              }
-
-            }
-          }
-
-          xhttp.open("GET", "search.php?q="+a, true);
-          xhttp.send();
-        }
-      }
 
       function addCookie(a){
         // var cookieSet = document.cookie; //get current cookie
@@ -156,13 +128,15 @@
             <div class="border p-4 rounded mb-4">
               <h3 class="mb-3 h6 text-uppercase text-black d-block">Categories</h3>
               <ul class="list-unstyled mb-0">
-                <li class="mb-1"><a href="#" class="d-flex"><span>Men</span> <span class="text-black ml-auto">(2,220)</span></a></li>
-                <li class="mb-1"><a href="#" class="d-flex"><span>Women</span> <span class="text-black ml-auto">(2,550)</span></a></li>
-                <li class="mb-1"><a href="#" class="d-flex"><span>Children</span> <span class="text-black ml-auto">(2,124)</span></a></li>
+                <li class="mb-1"><a href="showElectronics.php" class="d-flex"><span>Electronics</span> <span class="text-black ml-auto"></span></a></li>
+                <li class="mb-1"><a href="showUniformItems.php" class="d-flex"><span>Uniform Items</span> <span class="text-black ml-auto"></span></a></li>
+                <li class="mb-1"><a href="showCivilianClothes.php" class="d-flex"><span>Civilian Clothes</span> <span class="text-black ml-auto"></span></a></li>
+                <li class="mb-1"><a href="showSpiritGear.php" class="d-flex"><span>Spirit Gear</span> <span class="text-black ml-auto"></span></a></li>
+                <li class="mb-1"><a href="showShoes.php" class="d-flex"><span>Shoes</span> <span class="text-black ml-auto"></span></a></li>
+                <li class="mb-1"><a href="showWatch.php" class="d-flex"><span>Watch</span> <span class="text-black ml-auto"></span></a></li>
+                <li class="mb-1"><a href="showOther.php" class="d-flex"><span>Other</span> <span class="text-black ml-auto"></span></a></li>
               </ul>
             </div>
-
-
           </div>
         </div>
       </div>
