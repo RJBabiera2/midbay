@@ -32,6 +32,8 @@
     </h1>
 
     <?php
+
+
       $num = fopen("currentId.txt", 'r+');
       $numString = fgets($num);
       fclose($num);
@@ -41,6 +43,8 @@
       $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
       $uploadOk = 1;
       $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+
       // Check if image file is a actual image or fake image
       if(isset($_POST["submit"])) {
         echo "gothere";
@@ -80,6 +84,8 @@
             echo "<h2 class='h2 mb-3 text-black' style='text-align: center;'>Sorry, there was an error uploading your file.,/h2>";
         }
       }
+
+
       if ($uploadOk != 0) {
         $id++;
         $write = fopen("currentId.txt", 'w+');

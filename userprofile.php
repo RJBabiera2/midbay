@@ -1,10 +1,11 @@
 <?php
+/*Start session, if not logged in, return to login
   session_start();
 
-  if(!isset($_SESSION['login'])) {
-    header("Location: login.php");
+  if(!isset($_SESSION['userID'])) {
+    header("Location: login.html");
   }
-
+  */
 ?>
 
 <!DOCTYPE html>
@@ -13,70 +14,91 @@
 
 <head>
   <meta charset="utf-8" />
-
+  <title>Profile</title>
   <!--Meta tag descriptors-->
   <meta name="description" content="User profile">
   <meta name="keywords" content="Registration, Results">
   <meta name="author" content="Harrison Bleckley">
-  <style>
-  </style>
-
-  <title>MidBay Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700">
   <link rel="stylesheet" href="fonts/icomoon/style.css">
+
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/magnific-popup.css">
   <link rel="stylesheet" href="css/jquery-ui.css">
   <link rel="stylesheet" href="css/owl.carousel.min.css">
   <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+
   <link rel="stylesheet" href="css/aos.css">
+
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    table, th, td {
+    border: 1px solid black;
+  }
+  </style>
+
+  <title>User Profile</title>
 </head>
 
 <body>
 
   <?php
-    $username = $_SESSION['username'];
+      include('header.php');
+  ?>
 
-    //Open and read users.txt
+  <h1>Welcome, User!</h1>
+
+  <?php
+    //Open and read LOG.txt
+    $userNum = 0;
 
     $logFile = fopen("users.txt", "r");
     $line = fgets($logFile);
     while(!feof($logFile)) {
-      $pieces = explode(" ", $line);
-      if($pieces[2] == $username) {
-        $theUser = $line;
-        $firstName = $pieces[0];
-      }
+      //$pieces = explode("\t", $line);
+      $allUsers[$userNum] = $line;
+      $userNum++;
       $line = fgets($logFile);
     }
-
-    echo "<h1>Welcome, $firstName!</h1>";
+    //Sort alphabetically by first name
+    sort($allUsers);
+    fclose($logFile);
   ?>
 
+  <?php
+      /*Display the summary characteristics
+      echo "<h3>Summary:</h3>";
+      echo "Number of users: $userNum<br>";
+      */
+  ?>
   <br>
 
   <table>
-    <caption><b>Your Information</b></caption>
+    <caption><b>Your Info</b></caption>
     <thead>
       <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Username</th>
-        <th>Email</th>
-        <th>Venmo</th>
+        <th>Name</th>
         <th>Password</th>
       </tr>
     </thead>
     <tbody>
   <?php //Parse the user input and write to table
+    for($i = 0; $i < $userNum; $i++) {
       echo "<tr>";
-      $userData = explode(" ", $theUser);
-      for($i = 0; $i < 6; $i++) {
-        echo "<td>$userData[$i]</td>";
+      $userData = explode("\t", $allUsers[$i]);
+      for($j = 0; $j < 2; $j++) {
+        if($j == 1) {
+          echo "<td>********</td>";
+        }
+        else {
+          echo "<td>$userData[$j]</td>";
+        }
       }
       echo "</tr>";
+    }
   ?>
     </tbody>
   </table>
