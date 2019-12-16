@@ -63,6 +63,7 @@
                     $cart = "cart";
                     $toFind = $_COOKIE[$cart];
                     $possibleFinds = explode("-",$toFind);
+                    echo($toFind);
 
                     //opening uploads file
                     $fp = fopen("uploads.txt", 'r');
@@ -74,8 +75,10 @@
                       $all = explode("\t", $line);
 
                       for($i=0; $i<count($possibleFinds); $i++){
-                        if($possibleFinds[$i] == $all[0])
+                        if($possibleFinds[$i] == $all[0]){
+                          echo($possibleFinds[$i]);
                           $print = true;
+                        }
                       }
 
                       if($print){

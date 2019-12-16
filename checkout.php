@@ -21,9 +21,9 @@
 
     <script>
 
-      function removeCookie(){
-        document.cookie = "cart=; expires==Thu, 01 Jan 1970 00:00:00 UTC;"; //taken from w3
-      }
+    function removeCookie(){
+      document.cookie = "cart=; expires==Thu, 01 Jan 1970 00:00:00 UTC;"; //taken from w3
+    }
     </script>
   </head>
   <body>
@@ -37,6 +37,7 @@
       $cart = "cart";
       $toFind = $_COOKIE[$cart];
       $possibleFinds = explode("-",$toFind);
+      echo($toFind);
 
       //opening uploads file
       $fp = fopen("uploads.txt", 'r');
@@ -44,16 +45,18 @@
       $name = array();
       $prices = array();
       $toWrite = array();
-      $write = true;
+
 
       while ($line = fgets($fp)){
+        $write = true;
         $all = explode("\t", $line);
 
         for($i=0; $i<count($possibleFinds); $i++){
           if($possibleFinds[$i] == $all[0]){ //deletet line
-            $venmo[count($venmo)] = $all[6];
+            $venmo[count($venmo)] = $all[7];
             $name[count($name)] = $all[2];
             $prices[count($prices)] = $all[1];
+            unlink($all[6]);
             $write = false;
           }
         }
@@ -71,6 +74,7 @@
       for($i=0; $i<count($toWrite); $i++){
         fwrite($fw, $toWrite[$i]);
       }
+
 
     ?>
 
@@ -91,7 +95,7 @@
                 <tbody>
 
                   <?php
-                    echo(count($venmo));
+                    //echo(count($venmo));
                     for($i=0; $i<count($venmo); $i++){
                       echo "<tr>";
                       // echo "<td class=\"product-thumbnail\">";
@@ -126,5 +130,8 @@
           send you your item. Thank you for using our site!
         </p>
 
+        <script>
+          removeCookie();
+        </script>
   </body>
 </html>
